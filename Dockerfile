@@ -5,11 +5,11 @@ FROM node:18
 WORKDIR /app
 
 # Install dependencies
-COPY soccer-proleagues-frontend/package*.json /app/
+COPY /package*.json /app/
 RUN npm install
 
 # Copy the rest of the application
-COPY soccer-proleagues-frontend/ /app/
+COPY / /app/
 
 # Expose the port that React will run on
 EXPOSE 3000
