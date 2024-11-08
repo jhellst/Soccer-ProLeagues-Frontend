@@ -4,12 +4,14 @@ FROM node:18
 # Set working directory in the container
 WORKDIR /app
 
+# Copy package.json and package-lock.json files first
+COPY package*.json ./
+
 # Install dependencies
-COPY /package*.json /app/
 RUN npm install
 
-# Copy the rest of the application
-COPY / /app/
+# Copy the rest of the application code
+COPY . .
 
 # Expose the port that React will run on
 EXPOSE 3000
