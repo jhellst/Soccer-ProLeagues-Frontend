@@ -1,8 +1,4 @@
-// const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
-// const BASE_URL = "http://localhost:5001";
 const BASE_URL = process.env.REACT_APP_BACKEND_SERVICE_URL;
-console.log("BASE_URL@@@", BASE_URL);
-
 
 /** API Class.
  *
