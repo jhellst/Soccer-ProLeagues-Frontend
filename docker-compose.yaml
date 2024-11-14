@@ -1,13 +1,13 @@
 services:
   react_frontend:
     container_name: react_frontend
-    build: ./soccer-proleagues-frontend
+    build: ./
     volumes:
-      - ./soccer-proleagues-frontend:/app
+      - .:/app
     ports:
-      - "5001:3000"
+      # - "5001:3000"
+      - "10000:10000"
     environment:
       - NODE_ENV=production
       - REACT_APP_BACKEND_SERVICE_URL=${REACT_APP_BACKEND_SERVICE_URL} # Flask service URL (Docker network resolution)
-    depends_on:
-      - flask_app
+      - PORT=${PORT}
