@@ -1,5 +1,4 @@
-// const BASE_URL = process.env.REACT_APP_BACKEND_SERVICE_URL; # Commented out for deployment on Render.
-
+const BASE_URL = process.env.REACT_APP_BACKEND_SERVICE_URL;
 
 /** API Class.
  *
