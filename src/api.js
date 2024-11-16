@@ -1,4 +1,4 @@
-const BASE_URL = process.env.REACT_APP_BACKEND_SERVICE_URL;
+const BASE_URL = process.env.REACT_APP_BACKEND_SERVICE_URL || 'https://soccer-proleaugues-backend.onrender.com';
 console.log("BASE_URL", BASE_URL);
 
 /** API Class.
