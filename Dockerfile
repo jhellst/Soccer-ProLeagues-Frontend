@@ -128,35 +128,67 @@
 
 
 
-# Stage 1: Build the React app
+# # Stage 1: Build the React app
+# FROM node:18 AS build-stage
+
+# # Set the working directory
+# WORKDIR /app
+
+# # Set OpenSSL compatibility for Webpack
+# ENV NODE_OPTIONS=--openssl-legacy-provider
+
+# # Copy package.json and package-lock.json files
+# COPY package*.json ./
+
+# # Install dependencies
+# # RUN npm install
+
+# # Copy the rest of the application source code
+# COPY . .
+
+# # Build the application
+# RUN npm run build
+
+# # Stage 2: Serve the React app using NGINX
+# FROM nginx:1.23.4
+
+# # Copy the build output from the previous stage to the NGINX public directory
+# COPY --from=build-stage /app/build /usr/share/nginx/html
+
+# # Expose the default NGINX port
+# EXPOSE 80
+
+# # Start NGINX
+# CMD ["nginx", "-g", "daemon off;"]
+
+
+
+# Stage 1: Build the React application
 FROM node:18 AS build-stage
 
-# Set the working directory
+# Set working directory
 WORKDIR /app
 
-# Set OpenSSL compatibility for Webpack
-ENV NODE_OPTIONS=--openssl-legacy-provider
-
-# Copy package.json and package-lock.json files
+# Copy only package.json and package-lock.json first to install dependencies
 COPY package*.json ./
 
 # Install dependencies
-# RUN npm install
+RUN npm install
 
 # Copy the rest of the application source code
 COPY . .
 
-# Build the application
+# Build the React application
 RUN npm run build
 
-# Stage 2: Serve the React app using NGINX
+# Stage 2: Serve the application using NGINX
 FROM nginx:1.23.4
 
-# Copy the build output from the previous stage to the NGINX public directory
+# Copy the React build output to NGINX's default public folder
 COPY --from=build-stage /app/build /usr/share/nginx/html
 
 # Expose the default NGINX port
 EXPOSE 80
 
-# Start NGINX
+# Start the NGINX server
 CMD ["nginx", "-g", "daemon off;"]
