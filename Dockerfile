@@ -27,11 +27,47 @@
 
 
 
+# # Stage 1: Build the React application
+# FROM node:18 AS build-stage
+
+# # Set working directory in the container
+# WORKDIR /app
+
+# # Copy package.json and package-lock.json files
+# COPY package*.json ./
+
+# # Install dependencies
+# RUN npm install
+
+# # Copy the rest of the application code
+# COPY . .
+
+# # Build the React app
+# RUN npm run build
+
+# # Stage 2: Serve the app using NGINX
+# FROM nginx:1.23.4 AS production-stage
+
+# # Copy the build output from the previous stage to the NGINX public directory
+# COPY --from=build-stage /app/build /usr/share/nginx/html
+
+# # Expose the default NGINX port
+# EXPOSE 80
+
+# # Start NGINX
+# CMD ["nginx", "-g", "daemon off;"]
+
+
+
+
 # Stage 1: Build the React application
 FROM node:18 AS build-stage
 
 # Set working directory in the container
 WORKDIR /app
+
+# Set the NODE_OPTIONS to allow legacy OpenSSL algorithms (to fix crypto issue)
+ENV NODE_OPTIONS=--openssl-legacy-provider
 
 # Copy package.json and package-lock.json files
 COPY package*.json ./
