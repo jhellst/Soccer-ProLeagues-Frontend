@@ -11,6 +11,7 @@ class SoccerLeaguesApi {
 
   static async request(endpoint, data = {}, method = "GET") {
     // console.log("API REQUEST", endpoint, "data", data, "method", method);
+    console.log("API REQUEST!", "BASE_URL", BASE_URL, "endpoint", endpoint, "data", data, "method", method);
     const url = new URL(`${BASE_URL}/${endpoint}`);
     console.log("Request@", endpoint, SoccerLeaguesApi.token);
     const headers = {
