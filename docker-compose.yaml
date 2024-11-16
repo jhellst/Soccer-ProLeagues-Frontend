@@ -1,6 +1,5 @@
 services:
   react_frontend:
-    container_name: react_frontend
     build: ./
     volumes:
       - .:/app
