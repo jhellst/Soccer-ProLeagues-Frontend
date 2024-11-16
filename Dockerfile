@@ -61,7 +61,8 @@
 
 
 # Stage 1: Build the React application
-FROM node:18 AS build-stage
+# FROM node:18 AS build-stage
+FROM node:20.10.0-alpine
 
 # Set working directory in the container
 WORKDIR /app
@@ -73,7 +74,7 @@ ENV NODE_OPTIONS=--openssl-legacy-provider
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+# RUN npm install
 
 # Copy the rest of the application code
 COPY . .
