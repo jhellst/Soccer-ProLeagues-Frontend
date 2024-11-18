@@ -137,7 +137,7 @@ function App() {
 
   /** Updates token and sets within local storage (removes if not available) */
   function updateToken(token) {
-    console.log("****token", token);
+    // console.log("****token", token);
     setToken(token);
     (token) ?
       sessionStorage.setItem("token", token) :
@@ -231,8 +231,8 @@ function App() {
         setFollowedTeams(followedTeams);
       }
     }
-    console.log(newFollowedTeams);
-    console.log(newUnfollowedTeams);
+    // console.log(newFollowedTeams);
+    // console.log(newUnfollowedTeams);
   }
 
 
@@ -267,7 +267,7 @@ function App() {
         setFollowedLeagues(followedLeagues);
       }
     }
-    console.log(newFollowedLeagues);
+    // console.log(newFollowedLeagues);
   }
 
   async function followLeague(user_id, league_id) {

@@ -1,5 +1,4 @@
 const BASE_URL = process.env.REACT_APP_BACKEND_SERVICE_URL || 'https://soccer-proleaugues-backend.onrender.com';
-console.log("BASE_URL", BASE_URL);
 
 /** API Class.
  *
@@ -11,11 +10,7 @@ class SoccerLeaguesApi {
   static token = "";
 
   static async request(endpoint, data = {}, method = "GET") {
-    // console.log("API REQUEST", endpoint, "data", data, "method", method);
-    console.log("API REQUEST!", "BASE_URL", BASE_URL, "endpoint", endpoint, "data", data, "method", method);
     const url = new URL(`${BASE_URL}/${endpoint}`);
-    console.log("url", url);
-    console.log("Request@", endpoint, SoccerLeaguesApi.token);
     const headers = {
       authorization: `Bearer ${SoccerLeaguesApi.token}`,
       'content-type': 'application/json',
@@ -42,6 +37,7 @@ class SoccerLeaguesApi {
   /** Get all leagues in database. */
   static async getLeagues() {
     let leagues = await this.request(`leagues`);
+    console.log("leagues@App", leagues);
     return leagues;
   }
 
