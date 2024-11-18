@@ -23,14 +23,14 @@ function TeamCard({ teamId, teamName, teamNameAbbrev, teamCrest, teamUrl, submit
       <div className="TeamCardInfo">
 
         <Link className="TeamCard-Link" to={"/teams/" + teamId}>
-          <div className="TeamName">{teamName}</div>
+          <div className="TeamName">{teamName || teamNameAbbrev}</div>
           <div className="TeamCrest">
-            <img src={teamCrest} alt={teamName + " Team Crest"} />
+            <img src={teamCrest} alt={teamName || teamNameAbbrev + " Team Crest"} />
           </div>
         </Link>
 
         <Link className="TeamCardNews" to={teamUrl}>
-          <div className="TeamCardNewsDiv">{teamName} Team News</div>
+          <div className="TeamCardNewsDiv">{teamName || teamNameAbbrev} Team News</div>
         </Link>
       </div>
 
