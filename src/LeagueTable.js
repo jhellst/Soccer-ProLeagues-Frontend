@@ -62,7 +62,7 @@ function LeagueTable({ getLeagueTable }) {
           </thead>
 
           {leagueTable.map((team, idx) => (
-            <LeagueTableRow key={idx} teamId={team.team_id} teamName={team.team_name} teamNameAbbrev={team.team_name_abbrev}
+            <LeagueTableRow key={idx} teamId={team.team_id} teamName={team.team_name ? team.team_name : team.team_name_abbrev} teamNameAbbrev={team.team_name_abbrev}
               teamCrest={team.team_crest} teamHyperlink={team.team_hyperlink} currentStanding={team.current_standing} wins={team.wins}
               draws={team.draws} losses={team.losses} gamesPlayed={team.games_played}
               goalsFor={team.goals_for} goalsAgainst={team.goals_against}
