@@ -36,7 +36,7 @@ function TeamCardList({ user, teams, title, followedTeamIds, followTeam, unfollo
         <div className="TeamCardListInfo">
 
           {teams.map((team, idx) => (
-            <TeamCard key={idx} teamId={team.team_id} teamName={team.team_name} teamNameAbbrev={team.team_name_abbrev}
+            <TeamCard key={idx} teamId={team.team_id} teamName={team.team_name ? team.team_name : team.team_name_abbrev} teamNameAbbrev={team.team_name_abbrev}
               teamCrest={team.team_crest} teamUrl={team.team_url} user_id={user?.user_id} title={title} followTeam={followTeam} unfollowTeam={unfollowTeam} isUserList={isUserList} isFollowedByUser={(team && team.team_id && followedTeamIds && followedTeamIds.has(team.team_id)) ? (true) : (false)} />
 
           ))}
