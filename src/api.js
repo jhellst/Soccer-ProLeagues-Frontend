@@ -37,7 +37,7 @@ class SoccerLeaguesApi {
   /** Get all leagues in database. */
   static async getLeagues() {
     let leagues = await this.request(`leagues`);
-    console.log("leagues@App", leagues);
+    // console.log("leagues@App", leagues);
     return leagues;
   }
 
