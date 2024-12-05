@@ -10,9 +10,6 @@ import SoccerLeaguesApi from './api';
 import TeamsAndLeaguesContext from './Contexts';
 
 
-// TODO: Write tests for all routes.
-// TODO: Remove any unused routes and components.
-// Long-Term: Implement search for teams/leagues.
 
 /**
  * App: Soccer ProLeagues application.
@@ -58,7 +55,6 @@ function App() {
     async function setInitialToken() {
       if (user && user.user_id && user.user_id !== undefined && user.user_id !== "") {
         const token = await SoccerLeaguesApi.getToken(user.user_id);
-        // console.log("****token", token);
         setToken(token.access_token);
       } else {
         setToken(null);
@@ -71,16 +67,14 @@ function App() {
    *    and set user state if token exists. */
   useEffect(function getUserData() {
     async function fetchUserData() {
-      // console.log("token", token);
 
       if (token && token !== undefined && token !== "" && token !== null) {
-        try { // Using try/catch block here to check for bad existing token from local storage
+        try { // Using try/catch block here to check for bad existing token from local storage.
           SoccerLeaguesApi.token = token;
-          // const decoded = jwtDecode(JSON.stringify(token));
           const decoded = jwtDecode(token);
 
           if (decoded.exp * 1000 < Date.now()) {
-            logout(); // Removes token/user if
+            logout(); // Removes token/user if expired.
           }
 
           const user = JSON.parse(decoded.sub);
@@ -90,7 +84,7 @@ function App() {
 
         }
         catch (err) {
-          // console.error(err); // Possibly uncomment this later for error-checking.
+          // console.error(err); // Consider uncommenting this later for error-checking.
         }
       }
       setIsLoaded(true);
@@ -137,7 +131,6 @@ function App() {
 
   /** Updates token and sets within local storage (removes if not available) */
   function updateToken(token) {
-    // console.log("****token", token);
     setToken(token);
     (token) ?
       sessionStorage.setItem("token", token) :
@@ -231,10 +224,7 @@ function App() {
         setFollowedTeams(followedTeams);
       }
     }
-    // console.log(newFollowedTeams);
-    // console.log(newUnfollowedTeams);
   }
-
 
 
   /** Follows a league and adds to the user's followed_leagues page. */
@@ -267,7 +257,6 @@ function App() {
         setFollowedLeagues(followedLeagues);
       }
     }
-    // console.log(newFollowedLeagues);
   }
 
   async function followLeague(user_id, league_id) {
