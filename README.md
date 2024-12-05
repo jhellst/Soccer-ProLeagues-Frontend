@@ -21,13 +21,13 @@
 <br />
 <div align="center">
   <a href="https://github.com/jhellst/Soccer-ProLeagues">
-    <img src="soccer-proleagues-frontend/src/images/logo.svg" alt="Logo" width="250" height="250">
+    <img src="src/images/logo.svg" alt="Logo" width="250" height="250">
   </a>
 
   <!-- <h1 align="center">Soccer ProLeagues</h1> -->
 
   <p align="center">
-    <a href="https://soccer-proleagues.onrender.com/">Project Link (Note: Website may take ~45 seconds to load and retrieve data)</a>
+    <a href="https://soccer-proleagues.onrender.com/">Project Link</a>
     <a href="https://drive.google.com/file/d/1f4TY-bUpUCd3NxmW6aM77AFWh1wnQlIA/view?usp=sharing">View Demo</a>
   </p>
 </div>
