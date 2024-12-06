@@ -33,7 +33,7 @@
   </p>
 </div>
 
-\* Demo Website is hosted on a free Render instance, and may take 1 minute to start up the project frontend + backend instances.
+<small>\* Note: Demo Website is hosted on a free Render instance, and may ~45 seconds to start up the project frontend + backend instances.</small>
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -92,6 +92,12 @@ Users can select leagues and teams to follow and unfollow, and a user can visit 
 A demo version of this project can be found here: https://soccer-proleagues.onrender.com/
 
 Please note that this project runs on a free Render instance. For this reason, the project's frontend and backend services may take up to 1 minute to spin up the server instances.
+
+
+## Project Details
+
+The GitHub repository for this project's backend can be found here:
+- [Soccer ProLeagues Backend](https://github.com/jhellst/Soccer-ProLeaugues-Backend)
 
 <!-- Frontend Located Here: -->
 
