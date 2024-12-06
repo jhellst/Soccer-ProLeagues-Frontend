@@ -20,19 +20,20 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/jhellst/Soccer-ProLeagues">
+  <a href="https://github.com/jhellst/Soccer-Proleagues-Frontend">
     <img src="src/images/logo.svg" alt="Logo" width="250" height="250">
   </a>
 
   <!-- <h1 align="center">Soccer ProLeagues</h1> -->
 
   <p align="center">
-    <a href="https://soccer-proleagues.onrender.com/">Project Link</a>
-    <a href="https://drive.google.com/file/d/1f4TY-bUpUCd3NxmW6aM77AFWh1wnQlIA/view?usp=sharing">View Demo</a>
+    <a href="https://soccer-proleagues.onrender.com/">Demo Website*</a>
+    <br>
+    <a href="https://drive.google.com/file/d/1f4TY-bUpUCd3NxmW6aM77AFWh1wnQlIA/view?usp=sharing">Demo Video</a>
   </p>
 </div>
 
-
+\* Demo Website is hosted on a free Render instance, and may take 1 minute to start up the project frontend + backend instances.
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -60,19 +61,19 @@
 <ul>
     <li>
       <div>Homepage</div>
-      <img src="soccer-proleagues-frontend/src/images/readme/1 - homepage.png" alt="Soccer ProLeagues Homepage" width="800" height="500">
+      <img src="src/images/readme/1 - homepage.png" alt="Soccer ProLeagues Homepage" width="800" height="500">
     </li>
     <li>
       <div>League Pages</div>
-      <img src="soccer-proleagues-frontend/src/images/readme/2 - allLeagues.png" alt="All Leagues" width="800" height="500">
-      <img src="soccer-proleagues-frontend/src/images/readme/3 - followedLeagues.png" alt="Followed Leagues" width="800" height="500">
-      <img src="soccer-proleagues-frontend/src/images/readme/5 - leagueTable.png" alt="League Table" width="800" height="500">
+      <img src="src/images/readme/2 - allLeagues.png" alt="All Leagues" width="800" height="500">
+      <img src="src/images/readme/3 - followedLeagues.png" alt="Followed Leagues" width="800" height="500">
+      <img src="src/images/readme/5 - leagueTable.png" alt="League Table" width="800" height="500">
     </li>
     <li>
       <div>Team Pages</div>
-      <img src="soccer-proleagues-frontend/src/images/readme/6 - allTeams.png" alt="All Teams" width="800" height="500">
-      <img src="soccer-proleagues-frontend/src/images/readme/7 - followedTeams.png" alt="Followed Teams" width="800" height="500">
-      <img src="soccer-proleagues-frontend/src/images/readme/4 - singleTeamPage.png" alt="Single Team Page" width="800" height="500">
+      <img src="src/images/readme/6 - allTeams.png" alt="All Teams" width="800" height="500">
+      <img src="src/images/readme/7 - followedTeams.png" alt="Followed Teams" width="800" height="500">
+      <img src="src/images/readme/4 - singleTeamPage.png" alt="Single Team Page" width="800" height="500">
     </li>
 
   </ul>
@@ -86,7 +87,11 @@
 
 Soccer ProLeagues is web application that allows a user to select pro soccer leagues to track statistics and performance for each team in the league. League data is stored in a PostgreSQL database and updated via an automated web-scraping process. The frontend webpage accesses the data via an API route and retrieves/renders it for viewing.
 
-Users can select leagues to follow and unfollow, and can toggle on/off any statistics to customize their view. Visualization of league data is available, for simple exploration of league and team statistics.
+Users can select leagues and teams to follow and unfollow, and a user can visit customized pages that include the leagues/teams that they are following. Visualization of league data is available, for simple exploration of league and team statistics.
+
+A demo version of this project can be found here: https://soccer-proleagues.onrender.com/
+
+Please note that this project runs on a free Render instance. For this reason, the project's frontend and backend services may take up to 1 minute to spin up the server instances.
 
 <!-- Frontend Located Here: -->
 
@@ -110,6 +115,7 @@ Of course, no one template will serve all projects since your needs may be diffe
 * [![Flask-SQLAlchemy][Flask-SQLAlchemy]][Flask-SQLAlchemy-url]
 * [![React][React.js]][React-url]
 * [![PostgreSQL][PostgreSQL]][PostgreSQL-url]
+* [![Docker][Docker]][Docker-url]
 <!-- * [![Chart.js][Chart.js]][Chart.js-url] -->
 * [![JWT][JWT]][JWT-url]
 * [![bs4][bs4]][bs4-url]
@@ -125,7 +131,7 @@ Of course, no one template will serve all projects since your needs may be diffe
 [PostgreSQL-url]: https://www.postgresql.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
-[Docker]: (https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff)
+[Docker]: https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff
 [Docker-url]: https://www.docker.com/
 <!-- [Chart.js]: https://img.shields.io/badge/chart.js-F5788D.svg?style=for-the-badge&logo=chart.js&logoColor=white
 [Chart.js-url]: https://www.chartjs.org/ -->
@@ -142,68 +148,35 @@ To get a local copy up and running follow these simple example steps. -->
 
 ### Prerequisites
 
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-* pip
-  ```sh
-  pip install pip
-  ```
+* Docker
+    - [Download Docker Desktop](https://docs.docker.com/get-started/get-docker/)
 * PostgreSQL
     - [Download PostgreSQL](https://www.postgresql.org/download/)
-<!-- This is an example of how to list things you need to use the software and how to install them. -->
 
-### Installation
-1. Clone the repository
-```sh
-   git clone https://github.com/jhellst/Soccer-ProLeagues.git
-   ```
-
-#### Backend:
-
-1. cd into backend folder
-```sh
-   cd soccer-proleagues-backend
-   ```
-2. Instantiate virtual environment
-3. Create .env file with the following 2 environmental variables:
-   ```sh
-   SECRET_KEY=<YOUR_SECRET_KEY>
-   DATABASE_URI=<YOUR_DATABASE_URI> # For example: postgresql:///soccer_proleagues
-   ```
-4. Install dependencies from requirements.txt
-   ```sh
-   pip install -r requirements.txt
-   ```
-5. Download and install PostgreSQL (if not already installed)
-    - [Download PostgreSQL](https://www.postgresql.org/download/)
-
-6. Run seed file to create db tables and populate database with latest teams, leagues, and statistics.
-   ```sh
-   python3 seed.py
-   ```
-7. Run backend server in terminal via Flask
-   ```sh
-   flask run -p 5001
-   ```
+### Installation Instructions
+1. Before running the project frontend, first visit the backend repository and follow the initial setup instructions.
+    - [Soccer Proleagues Backend](https://github.com/jhellst/Soccer-ProLeaugues-Backend)
+2. After the backend is up and running, follow the setup instructions below to launch the frontend.
 
 #### Frontend:
-
-1. cd into frontend folder
+1. Clone the frontend repository
 ```sh
-   cd soccer-proleagues-backend
+   git clone https://github.com/jhellst/Soccer-Proleagues-Frontend.git
    ```
-2. Install NPM packages
+2. cd into frontend folder
+```sh
+   cd soccer-proleagues-frontend
+   ```
+3. Create .env file with the following environmental variables:
    ```sh
-   npm install
+   REACT_APP_BACKEND_SERVICE_URL=<YOUR_BACKEND_SERVICE_URL>
+   PORT=<PORT_NUMBER>
    ```
-3. Run app
-    - Ensure that the backend is also running on port 5001.
+4. Run Docker command to build
    ```sh
-   npm start
+   docker compose up
    ```
-4. To login, either signup a new user or login with one of the test users:
+5. To login, either signup a new user or login with one of the test users:
    ```sh
    (username: TestUser, password: test)
    (username: a, password: a)
@@ -272,7 +245,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- CONTACT -->
 ## Contact
 
-Joshua Hellstrom - [LinkedIn](https://www.linkedin.com/in/joshua-hellstrom/) - [Portfolio Website](https://joshua-hellstrom.surge.sh/) - jhellst@gmail.com
+Joshua Hellstrom - [LinkedIn](https://www.linkedin.com/in/joshua-hellstrom/) - [Portfolio Website](https://joshhellstrom.site/) - jhellst@gmail.com
 
 <!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
