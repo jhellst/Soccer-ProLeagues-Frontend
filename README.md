@@ -92,7 +92,7 @@ Users can select leagues and teams to follow and unfollow, and a user can visit 
 
 A demo version of this project can be found here: https://soccer-proleagues.onrender.com/
 
-Please note that this project runs on a free Render instance. For this reason, the project's frontend and backend services may take up to 1 minute to spin up the server instances.
+<sub>*Please note that this project runs on a free Render instance. For this reason, the project's frontend and backend services may take up to 1 minute to spin up the server instances.</sub>
 
 
 ## Project Details
