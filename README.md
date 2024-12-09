@@ -97,7 +97,7 @@ Please note that this project runs on a free Render instance. For this reason, t
 
 ## Project Details
 
-The GitHub repository for this project's backend can be found here:
+This repository contains the frontend code for the Soccer ProLeagues web application. The GitHub repository for this project's backend can be found here:
 - [Soccer ProLeagues Backend](https://github.com/jhellst/Soccer-ProLeaugues-Backend)
 
 <!-- Frontend Located Here: -->
@@ -165,7 +165,7 @@ To get a local copy up and running follow these simple example steps. -->
     - [Soccer Proleagues Backend](https://github.com/jhellst/Soccer-ProLeaugues-Backend)
 2. After the backend is up and running, follow the setup instructions below to launch the frontend.
 
-#### Frontend:
+### Frontend Installation Instructions:
 1. Clone the frontend repository
 ```sh
    git clone https://github.com/jhellst/Soccer-Proleagues-Frontend.git
